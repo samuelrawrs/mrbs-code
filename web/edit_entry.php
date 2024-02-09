@@ -1155,6 +1155,7 @@ checkAuthorised(this_page());
 
 $mrbs_user = session()->getCurrentUser();
 $mrbs_username = (isset($mrbs_user)) ? $mrbs_user->username : null;
+$mrbs_display_name = (isset($mrbs_user)) ? $mrbs_user->display_name : null;
 
 // You're only allowed to make repeat bookings if you're an admin
 // or else if $auth['only_admin_can_book_repeat'] is not set
@@ -1736,6 +1737,7 @@ foreach ($edit_entry_field_order as $key)
       break;
 
     case 'description':
+      $description = $mrbs_display_name;
       $fieldset->addElement(get_field_description($description));
       break;
 
