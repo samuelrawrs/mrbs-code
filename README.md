@@ -6,7 +6,35 @@
 
 
 # Install
-Honestly, I'm just going to follow the [install](INSTALL) page and update this readme with special information specific to this repository.
+I'm just going to follow the [install](INSTALL) page and update this readme with special information specific to this repository.
+
+## 1. Setting up Local Server Environment
+I installed Apache, PHP and postgre-sql on my ubuntu 22.04 system and am using the phpstorm IDE to test the code.
+There's a whole bunch of stuff on how to setup your local server which is a little complicated but the gist is figuring out your local directory root which should be something like `/var/www/` for ubuntu.
+
+## 2. Downloading and Configuring MRBS
+Download it or gitclone it and important things to change:
+- Configure MRBS: Open the config.inc.php file within the MRBS directory. You'll need to edit this file to configure MRBS to connect to your Supabase database:
+- Set the database type to PostgreSQL (pgsql).
+Fill in the database connection details (host, database name, username, password) provided by Supabase. You can find these details in the "Settings" -> "Database" section of your Supabase project dashboard.
+- Configure other MRBS settings as needed, following the comments and documentation within the config.inc.php file.
+
+## 3. Setting up the Database
+Use the SQL Editor in Supabase to run the MRBS database schema setup scripts. MRBS provides a specific SQL file for PostgreSQL (like tables.pg.sql), copy the contents and execute them in the Supabase SQL Editor to create the necessary tables and schema.
+
+## 4. Importing data
+Now I'm importing data from mysql to postgre and I keep getting hit with this error:
+`Failed to import data: insert or update on table "mrbs_room" violates foreign key constraint "mrbs_room_area_id_fkey"
+`
+But I soon found out that this was because the tables were linked - meaning I had to transfer each table manually in a certain order (area first, followed by rooms, etc...) so that the relationships made sense.
+
+`Failed to import data: invalid input syntax for type integer: "NULL"`
+
+TIL that postgre is not a fan of NULL values which mysql is okay with. I just hid those columns and the imports worked fine.
+
+## 5. Making it all look pretty
+A feature request for the site was to bring back the floorplan into the website. I thought it was just embeding a simple png and copying the css that Caleb had written but boy was I wrong. The creators of MRBS had re-written the `index.php` file, leading to the html elements being generated differently. Furthermore, the fix that looks good on web on laptops become ugly when on mobile. Urgh. Not me at 4:28am on CNY day trying to fix this blehhh.
+
 
 # Background
 ## RIP booking website (?-2023)

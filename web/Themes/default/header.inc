@@ -437,6 +437,9 @@ function print_banner(?array $context, $simple=false, $omit_login=false) : void
 
   print_header_site_info();
 
+  echo "<nav class=\"header-container\">\n";
+  echo "<div class=\"custom-header\"><img src='/web/css/nhrpr.png' alt='North Hill Floorplan'></div>\n";
+
   if (!$simple)
   {
     echo "<nav class=\"container\">\n";
