@@ -254,8 +254,9 @@ function cell_html(array $cell, array $query_vars, bool $is_invalid = false) : s
                    ' class="' . $booking['type'] . '"' .
                    ' data-id="' . $booking['id'] . '"' .
                    ' data-type="' . $booking['type'] . '">';
-        $html .= htmlspecialchars($booking['name']) . '</a>';
-        $html .= "</div>";
+        $html .= htmlspecialchars($booking['name']);
+        $html .= '<br><span class="booking-description" style="font-weight: normal;">' . htmlspecialchars($booking['description']) . '</span>'; // Make the description unbold
+        $html .= '</a>';
       }
     }
 
