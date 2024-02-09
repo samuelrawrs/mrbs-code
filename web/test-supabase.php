@@ -6,6 +6,7 @@ $user = ''; // Replace with your Supabase user
 $password = ''; // Replace with your Supabase password
 // Supabase connection parameters (unfilled for security)
 
+
 // PDO connection string
 $dsn = "pgsql:host=$host;dbname=$dbname";
 
