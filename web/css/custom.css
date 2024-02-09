@@ -46,14 +46,17 @@
   .custom-header img {
     height: 70px; /* Even smaller height for very small devices */
   }
+}
 
 @media (max-width: 600px) {
   .custom-header img {
     height: 50px; /* Even smaller height for very small devices */
   }
-
+}
 @media (max-width: 550px) {
   .custom-header img {
-    height: 0px; /* Even smaller height for very small devices */
+    height: 0; /* Even smaller height for very small devices */
   }
 }
+
+
