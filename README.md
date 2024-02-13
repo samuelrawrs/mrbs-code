@@ -39,7 +39,7 @@ Turns out, infinityfree.com (free plan) is not cool with 1. remote databases 2. 
 
 ## 7. I'm tired
 What eventually worked out was reverting back to the mysql database on the infinityfree.com website, noticing the subtle name change in the database hostname url (probably meaning their servers messed up quietly).
-All I had to do was link up the "new" database with the new hostname to the current code, zip it and unzip it into the file manager on infinityfree. I guess the only reason this wasn't a total waste of time was that I was able to add features to the codebase (adding images, etc...) and documenting this whole process!
+All I had to do was link up the "new" database with the new hostname to the current code, zip it and unzip it into the file manager on infinityfree. I guess the only reason this wasn't a total waste of time was that I was able to add features to the codebase and documenting this whole process!
 If anyone does read this README, thanks sm for journeying with me to this point LOL and if you have any questions do not hesitate to ask me anything.
 
 # History
@@ -65,6 +65,13 @@ So that's where we are now - but this time, I want to (try to) do things the rig
 
 ## It's not down...yet (2024 - ???)
 
+## 13.02.2024 Patchnotes (?)
+1. Added north hill floorplan into website
+2. Updated help page with rules
+3. Password resetting works now under "Users" tab, clicking <your name>
+4. Able to view all bookings under "<your name> tab"
+5. Re-added created-by into calendar view
+6. Re-added auto-fill of participants in entry
 
 
 
