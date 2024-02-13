@@ -1,11 +1,10 @@
 # REP Meeting Room Booking System (MRBS)
 
-1. [Install](#Install)
-2. [Background](#Background)
+1. [Documentation (aka Ramblings)](#Documentation)
+2. [History](#History)
 
 
-
-# Install
+# Documentation
 I'm just going to follow the [install](INSTALL) page and update this readme with special information specific to this repository.
 
 ## 1. Setting up Local Server Environment
@@ -35,9 +34,16 @@ TIL that postgre is not a fan of NULL values which mysql is okay with. I just hi
 ## 5. Making it all look pretty
 A feature request for the site was to bring back the floorplan into the website. I thought it was just embeding a simple png and copying the css that Caleb had written but boy was I wrong. The creators of MRBS had re-written the `index.php` file, leading to the html elements being generated differently. Furthermore, the fix that looks good on web on laptops become ugly when on mobile. Urgh. Not me at 4:28am on CNY day trying to fix this blehhh.
 
+## 6. Help me please
+Turns out, infinityfree.com (free plan) is not cool with 1. remote databases 2. postgresql databases. Enter another day of trying to deploy this on vercel using vercel-php and failing horribly.
 
-# Background
-## RIP booking website (?-2023)
+## 7. I'm tired
+What eventually worked out was reverting back to the mysql database on the infinityfree.com website, noticing the subtle name change in the database hostname url (probably meaning their servers messed up quietly).
+All I had to do was link up the "new" database with the new hostname to the current code, zip it and unzip it into the file manager on infinityfree. I guess the only reason this wasn't a total waste of time was that I was able to add features to the codebase (adding images, etc...) and documenting this whole process!
+If anyone does read this README, thanks sm for journeying with me to this point LOL and if you have any questions do not hesitate to ask me anything.
+
+# History
+## RIP booking website (??? - 2023)
 I chanced upon this framework when our poor REP north hill room booking website (http://nhrprbooking.epizy.com/) went down on 27th September 2023, possibly due to the free hosting server disappearing :cry:
 
 Now my background is mechanical engineering and some robotics software coding (python, linux, occasional cpp). I had 0 knowledge of web-hosting, databases, hashing and salting of passwords, etc... but I really enjoy solving random problems! So my priority at the start was clear - this isn't really a time to learn and do things "properly", but rather just a quick and dirty attempt at getting the site back up, functioning again. Hence, with the help of chatgpt and some googling, I learnt that I had to find a new hosting site that'll eventually hold the php files, the database, as well as providing the domain name.
@@ -48,7 +54,7 @@ By the time I had finished setting up the website, I realised there was another 
 
 After a while of fixing bugs, adding rooms and renaming a bunch of things, the website seemed to function. It was by no means perfect and had a ton of features which I hadn't explored yet (such as password resetting and setting restrictions on bookings). BUT it was done and had already taken up more than 2 days, so I just left it up and didn't take a look at it again.
 
-## It died again???
+## It died again (08/02/2024)
 
 On 8th February 2024, the website was down. I woke up in the morning and was all ready to book a room and was shocked to see `404 Access Denied` when I loaded up the website.
 
@@ -57,6 +63,7 @@ I went to check out the file manager and realised that all my files were gone. I
 So that's where we are now - but this time, I want to (try to) do things the right way. I've loaded phpstorm on my linux system and I'm testing out this code on my local apache server. Most importantly, I'm committing to github for the sake of juniors probably :') Hopefully this goes well.
 
 
+## It's not down...yet (2024 - ???)
 
 
 
