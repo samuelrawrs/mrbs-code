@@ -1,5 +1,8 @@
 # REP Meeting Room Booking System (MRBS)
 
+Here lies the source code and configurations for the REP meeting room booking system.
+Website link here: http://rep.000.pe/.
+
 1. [Documentation (aka Ramblings)](#Documentation)
 2. [History](#History)
 
