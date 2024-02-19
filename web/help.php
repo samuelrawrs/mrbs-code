@@ -77,6 +77,7 @@ echo "<p>\n";
 $html = '<a href="mailto:' . rawurlencode($mrbs_admin_email) . '">' . htmlspecialchars($mrbs_admin) . '</a>';
 $contact = '<span class="contact" data-html="' . base64_encode($html) . '">' . htmlspecialchars($mrbs_admin) . '</span>';
 echo get_vocab("please_contact", $contact) . "\n";
+echo "<br> Configuration and source code can be found in this <a href='https://github.com/samuelrawrs/mrbs-code'>github repository</a>." ;
 echo "</p>\n";
 
 $faqfile = $faqfilelang ?? '';
