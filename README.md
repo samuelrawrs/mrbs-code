@@ -65,6 +65,9 @@ I went to check out the file manager and realised that all my files were gone. I
 
 So that's where we are now - but this time, I want to (try to) do things the right way. I've loaded phpstorm on my linux system and I'm testing out this code on my local apache server. Most importantly, I'm committing to github for the sake of juniors probably :') Hopefully this goes well.
 
+## Slow loading times (28/04/2024)
+
+It's 2 days before my finals and I was procrastinating when I noticed the rep booking website taking AGES to load... possibly because everyone's tryna book rooms now.... might need to migrate to altervista.org instead hmmm.
 
 ## It's not down...yet (2024 - ???)
 
