@@ -79,5 +79,9 @@ It's 2 days before my finals and I was procrastinating when I noticed the rep bo
 5. Re-added created-by into calendar view
 6. Re-added auto-fill of participants in entry
 
+## Future Ideas
+1. Using Vercel to host instead
+2. Making a Telegram bot to faciliate the booking of rooms
+
 
 
