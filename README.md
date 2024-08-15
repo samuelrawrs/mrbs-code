@@ -3,8 +3,13 @@
 Here lies the source code and configurations for the REP meeting room booking system.
 Website link here: http://rep.000.pe/.
 
-1. [Documentation (aka Ramblings)](#Documentation)
-2. [History](#History)
+1. [Adding New Users](#Adding-New-Users)
+2. [Documentation (aka Ramblings)](#Documentation)
+3. [History](#History)
+
+
+# Adding New Users
+Go to Outlook and look for "Renaissance Engineering" contact lists. Instructions found [here]([url](https://www.uab.edu/medicine/pathology/images/forms-pdfs/PathIS/HOW_TO_EXPORT_A_DISTRIBUTION_LIST_IN_OUTLOOK_TO_EXCEL.pdf)) are extremely useful for exporting the distribution list to add to the mrbs_users database.
 
 
 # Documentation
