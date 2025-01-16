@@ -115,5 +115,10 @@ now the sites are up on rep-mrbs.fly.dev and rep-mrbs.onrender.com (as a failove
 
 Moving on db management should be simpler also (can use psql on your computer to manage users etc etc assuming you have postgresql^16 installed).
 
+#### Minor Fixes
+- modified a line of code in the header.inc from /web/css/nhrpr.png --> css/nhrpr.png because file directories change in docker container
+- add ` sed -i 's/^# *\(en_SG.UTF-8\)/\1/' /etc/locale.gen && \` to dockerfile, for some reason the site breaks and doesn't have locale fallback
+
+
 
 
