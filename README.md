@@ -86,7 +86,34 @@ It's 2 days before my finals and I was procrastinating when I noticed the rep bo
 
 ## Future Ideas
 1. Using Vercel to host instead
-2. Making a Telegram bot to faciliate the booking of rooms
+2. Making a Telegram bot to faciliate the b ooking of rooms
+
+## 16 Jan 2025: Handover
+(John is writing this)
+The project has since been handed over to R13 John. There were some issues with infinityfree.com hosting, namely:
+1. server administration can only be done by 1 person with the account credentials
+2. infinityfree lost access to the 000.pe and is-great.org subdomains which calls into question the overall reliability of the service
+
+To mitigate this, I decided to migrate the database over from MySQL (which was previously documented above) to Postgresql.
+Migrating over to pgsql opens up managed db options like render.com and supabase, which have free tiers that are enough to support the needs of the mrbs. I elected to use render.com's free postgres instance because I wanted to also just use render.com to host the actual site, but supabase would work fine as well. To migrate the database there is a certain order to be followed (as above), but I just copied the entire table creation sql query to decouple the dependencies and to migrate in the right order.
+
+I then dockerized the PHP site (meeting-room-booking-system/mrbs-code#3809).
+
+This is how I did it (sans all of the google searching and errors):
+1) Pull this repo
+2) Edit the dockerfile according to the issue above
+3) Edit the config.php by hardcoding the pgsql credentials inside the config
+4) Change gitignore so the config gets pushed
+5) rm -rf .git and pushed the repo as a private repo (because now the db creds are hardcoded)
+6) Gave access to that private repo on render.com to host
+
+I could've used secrets and envs but i didn't know how / was lazy. Thus there exists a private repo of this rep mrbs site with the creds hardcoded on github.
+
+Anyways my original plan to put everything on render.com (under the makers email, which I won't write down here) is a bust because I think render spins down the site after periods of inactivity and cold-starting the site will be very slow. Luckily I have a legacy fly.io account which purportedly allows me to host a small website for free using docker. A lot of services (vercel, netlify) don't support docker, but for the ones that do, it's quite painless.
+
+now the sites are up on rep-mrbs.fly.dev and rep-mrbs.onrender.com (as a failover). They point to the same render database.
+
+Moving on db management should be simpler also (can use psql on your computer to manage users etc etc assuming you have postgresql^16 installed).
 
 
 
